@@ -122,9 +122,9 @@ viewModel.search = function() {
         	else {
             	place.show(false);
             	// Sets markers visibility to false
-            	for(var i = 0; i < viewModel.markers().length; i++) {
-        			if(title == viewModel.markers()[i].title.toLowerCase()) {
-        				viewModel.markers()[i].setVisible(false);
+            	for(var j = 0; j < viewModel.markers().length; j++) {
+        			if(title == viewModel.markers()[j].title.toLowerCase()) {
+        				viewModel.markers()[j].setVisible(false);
         			}
         		}
         	}
