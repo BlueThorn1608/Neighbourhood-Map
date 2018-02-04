@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Neighbourhood Map Project</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale = 1">
+	<link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+
+	<div id="idSideBar" class="sideBar">
+		<div class="container searchBar">
+			<div class="row">
+				<div class="col-xs-6">
+					<h3>Navigation Pane</h3>
+				</div>
+				<div class="col-xs-3">
+					<a href="javascript:void(0)" class="closeButton" onclick="closeNav()">&times;</a>
+				</div>
+			</div>
+		</div>
+
+		<div id="searchBox">
+			<input type="search" id="search" name="search" placeholder="Search.." autocomplete="off" data-bind="value: query, valueUpdate: 'keyup',event: {keyup: search}">
+		</div>
+		
+		<ul class="list" data-bind="foreach: places">
+			<li class="listElements" data-bind="text: title,visible: show, click: $root.handle">
+				
+			</li>
+		</ul>
+
+		<div class="info"></div>
+		
+	</div>
+
+	<div id="main" class="container">
+		
+		<div class="row">
+			<div class="col-xs-12">
+				<h2>Places to visit in Trivandrum</h2>
+				<p>Click on button below to open Navigation Pane</p>
+				<span class="openButton" onclick="openNav()">&#9778; Open</span>
+			</div>
+		</div>
+
+		<div class="row">
+			<div id="map"></div>
+		</div>
+
+		<div class="error-div-wrapper">
+        	<!--Observable for Google Maps Error Div -->
+            <div class="mapError" data-bind="visible: unavailable">
+                <p>Sorry Google Maps is unable to load right now.<br>Please check your Internet Connection and refresh the page, or try again later.</p>
+            </div>
+        </div>
+
+	</div>
+
+	<script src="js/libs/jquery-3.2.1.min.js"></script>
+	<script src="js/libs/knockout-3.4.2.js"></script>
+	<script src="js/navigation.js"></script>
+	<script src="js/map.js"></script>
+	<script src="js/app.js"></script>
+	<script async defer onerror="mapError()" src="https://maps.googleapis.com/maps/api/js?&key=AIzaSyAMyDZP9SYuNm00QOXEQH_n35ypDidpDdc&callback=initMap"></script>
+
+</body>
+
+</html>

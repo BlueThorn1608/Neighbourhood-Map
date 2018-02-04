@@ -1,0 +1,215 @@
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: 'Dosis', sans-serif;
+}
+
+html {
+    margin: auto;
+}
+
+body {
+    height: 100%;
+    overflow-x: hidden;
+    vertical-align: middle;
+    margin: 10px;
+    padding: 10px;
+}
+
+h3{
+    color: white;
+}
+
+.sideBar {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.sideBar .closeButton {
+    position: absolute;
+    top: 0;
+    right: 40%;
+    font-size: 15px;
+    margin-left: 0px;
+    color: white;
+}
+
+.list {
+    color: white;
+    padding: 1em;
+    margin: 0 0 0 0;
+    font-size: 1.2em;
+    list-style: none;
+    cursor: pointer;
+}
+
+.listElements {
+    padding: 5px;
+    display: block;
+}
+
+.openButton {
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.info {
+    padding: 5px;
+    display: block;
+    font-size: 1em;
+}
+
+.marker-title {
+    position: center;
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#map {
+    height: 100vh;
+    width: 100vw,
+}
+
+.mapError {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background-color: rgb(104, 104, 104);
+    z-index: 102;
+    color: #fff;
+    font-family: 'Dosis', sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    padding: 1em 0 0 5em;
+}
+
+@media screen and (max-height: 450px) {
+  .sideBar {padding-top: 15px;}
+  .sideBar a {font-size: 18px;}
+}
+
+
+@media screen and (max-width: 360px) {
+  h2 {
+    font-size: 1.1em;
+    margin-top: 0px;
+  }
+  h3 {
+    font-size: 1em;
+  }
+  p {
+    font-size: 1em;
+    margin-bottom: 0px;
+  }
+  .openButton {
+    font-size: 0.8em;
+  }
+  .closeButton{
+    font-size: 0.8em;
+  }
+  .listElements{
+    padding: 1px;
+    font-size: 0.8em;
+  }
+  .sideBar {
+    padding-top: 3px;
+  }
+}
+
+
+@media screen and (min-width: 361px) and (max-width: 640px){
+  h2 {
+    font-size: 1.5em;
+    margin-top: 0px;
+  }
+  h3 {
+    font-size: 1.5em;
+  }
+  p {
+    font-size: 1em;
+    margin-bottom: 0px;
+  }
+  .openButton {
+    font-size: 1.3em;
+  }
+  .closeButton{
+    font-size: 1.2em;
+  }
+  .listElements {
+    padding: 1px;
+    font-size: 1em;
+  }
+  .sideBar {
+    padding-top: 5px;
+  }
+}
+
+
+@media screen and (min-width: 641px) and (max-width: 767px) {
+    h3 {
+        font-size: 1.5em;
+    }
+    .closeButton {
+        font-size: 2em;
+    }
+    .openButton {
+        font-size: 1.3em;
+    }
+    .sideBar {
+        padding-top: 5px;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 850px) {
+    h3 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1.5em;
+        margin-bottom: 0px;
+    }
+    .closeButton {
+        font-size: 2em;
+    }
+    .openButton {
+        font-size: 1.5em;
+    }
+    .searchBar {
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 851px) and (max-width: 1500px) {
+    h3 {
+        font-size: 1.5em;
+    }
+    p {
+        font-size: 1.5em;
+        margin-bottom: 0px;
+    }
+    .closeButton {
+        font-size: 2.5em;
+    }
+    .openButton {
+        font-size: 1.8em;
+    }
+    .searchBar {
+        width: 250px;
+    }
+}
