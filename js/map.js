@@ -135,7 +135,7 @@ function makeMarkerIcon(markerColor) {
   return markerImage;
 }
 
-// Function to open infowindow and add info from wikipedia to infowindow
+// Function to open infowindow
 function populateInfoWindow(marker) {
 	
 	if(infowindow.marker != marker) {
@@ -152,7 +152,6 @@ function populateInfoWindow(marker) {
 		});
 	}
 
-  // Event Listener for wikipedia api and information
 	marker.addListener('click', loadData(marker, infowindow));
 
   // Animation to make the markers bounce
@@ -174,7 +173,16 @@ function loadData(marker, infowindow) {
         success: function(response){
           $information.text = "";
           var text = response[2];
+          var rating, phone, reviews;
+          // Short circuit
+          phone = response.phone || 'No Phone Provided';
+          // (condition) ? (if true then) : (if false then)
+          response.rating ? rating = response.rating : rating = 'No Rating available';
+          (response.reviews && response.reviews.length) ? reviews = response.reviews : reviews = 'No Reviews Provided';
           console.log(text);
+          if (text.length === 0)
+          infowindow.setContent('<div class="marker-title">' + marker.title + '</div>' + '<p class="info">' + reviews + '</p>');
+          else            
           infowindow.setContent('<div class="marker-title">' + marker.title + '</div>' + '<p class="info">' + text + '</p>');
         }
     }).fail(function(){
